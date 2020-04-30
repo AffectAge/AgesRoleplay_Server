@@ -1,0 +1,59 @@
+# ==================================================================================================
+# This config allows you to configure how often and how much taxes are collected from various 
+# balances like Player, Towny, etc. Only Player and Towny are currently supported.
+# 
+# See the defaultConfig on the spigotmc.org page full descriptions and examples of the config.
+# ==================================================================================================
+
+Debug: false
+Taxes:
+    PlayerBalanceTax:
+        Enabled: true
+        TaxFrequency: 1d
+        TaxDepositAccount:
+            Enabled: true
+            Name: Global_Bank
+        TaxCollection: OnlyCollection
+        BatchProcessing:
+            Enabled: false
+            Size: 500
+            Delay: 20
+    NationTax:
+        Enabled: false
+        TaxFrequency: 1d
+        TaxDepositAccount:
+            Enabled: false
+            Name: towny_server
+        TaxCollection: OnlyCollection
+        BatchProcessing:
+            Enabled: false
+            Size: 500
+            Delay: 20
+    TownTax:
+        Enabled: false
+        TaxFrequency: 1d
+        TaxDepositAccount:
+            Enabled: false
+            Name: towny_server
+        TaxCollection: OnlyCollection
+        BatchProcessing:
+            Enabled: false
+            Size: 500
+            Delay: 20
+TaxCollections:
+    OnlyCollection:
+        AllPlayers:
+            Groups: []
+            TaxBrackets:
+                Poor:
+                    MaxBalance: 1000.0
+                    TaxType: PERCENT
+                    TaxAmount: 0.5
+                MiddleClass:
+                    MaxBalance: 20000.0
+                    TaxType: PERCENT
+                    TaxAmount: 1.0
+                Rich:
+                    MaxBalance: -1
+                    TaxType: PERCENT
+                    TaxAmount: 2.0

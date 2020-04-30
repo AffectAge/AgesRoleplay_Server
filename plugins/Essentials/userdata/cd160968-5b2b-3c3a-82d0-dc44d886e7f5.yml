@@ -1,0 +1,30 @@
+lastAccountName: Mark_Terry
+timestamps:
+  login: 1588179531624
+  logout: 1587919052178
+  lastteleport: 1588179926213
+ipAddress: 176.243.25.178
+logoutlocation:
+  world: TravelersDreamCompact
+  x: 1817.7057552941708
+  y: 11.0
+  z: 1046.6740539039663
+  yaw: -90.20886
+  pitch: 10.800115
+homes:
+  home:
+    world: TravelersDreamCompact
+    x: 17.9506022950671
+    y: 68.0
+    z: 353.7576144331266
+    yaw: -209.25041
+    pitch: -7.04998
+lastlocation:
+  world: TravelersDreamCompact
+  x: 1881.699999988079
+  y: 67.0
+  z: 1464.3313033213692
+  yaw: 29.782509
+  pitch: 17.399323
+money: '1696.708424688750054535'
+afk: false

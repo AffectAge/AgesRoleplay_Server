@@ -1,0 +1,114 @@
+# This is the main configuration file for Mohist.
+# 
+# Home: https://www.mohist.red/
+# 
+# Setting: plugin.promptBug Default: false   # Prompt for possible vulnerabilities of some plugins
+# Setting: consolecolor.info-level Default: 2   # consolecolor.info-level
+# Setting: entity-tick-limit Default: 300   # Entity maximum tick limit, entities exceeding this value will not be updated
+# Setting: mohist.CloseChatInConsole Default: false   # Player's chat info will not be recorded in the console after opening
+# Setting: mohist.check_libraries Default: true   # Check libraries
+# Setting: hidejoinmodslist Default: false   # Hide the list of mods displayed on the console when players join the server
+# Setting: consolecolor.warn-time Default: b   # consolecolor.warn-time
+# Setting: messages.Requirements-Mod-Version Default: version %s   # version X
+# Setting: messages.Requirements-Mod-Invalid-version Default: Requires %s but client has %s.   # Requires mod version X but client has Y
+# Setting: disable-announce-Advancements Default: false   # Turn off achievment notifications
+# Setting: consolecolor.fatal-msg Default: c   # consolecolor.fatal-msg
+# Setting: mohist.check_update Default: true   # Check the version update status of the main program
+# Setting: eventCanceled.explosion Default: false   # BlockExplosionEvent isCanceled
+# Setting: consolecolor.info-time Default: b   # consolecolor.info-time
+# Setting: forge.modsblacklist.list Default: aaaaa;bbbbbb   # mods black-list
+# Setting: libraries_black_list Default: aaaaa;bbbbbb   # libraries_black_list
+# Setting: messages.Outdate-Client Default: Outdated client! Please use {0}   # Outdate Client
+# Setting: consolecolor.trace-level Default: c   # consolecolor.trace-level
+# Setting: consolecolor.error-time Default: b   # consolecolor.warn-time
+# Setting: messages.Rejections-Server-Mods Default: Server Mod rejections: 
+# %s   # Server-mods rejections
+# Setting: mohist.support_nocmd Default: false   # Some server tools do not recognize I18N
+# Setting: consolecolor.trace-time Default: b   # consolecolor.trace-time
+# Setting: world.stopserversaveworlds Default: false   # stopserversaveworlds
+# Setting: consolecolor.fatal-level Default: c   # consolecolor.fatal-level
+# Setting: messages.use-unknow-command Default: Unknown command. Type "/help" for help.   # Prompt unknown command
+# Setting: mohist.server-type Default: FML   # Set the server type displayed in motd (FML/BUKKIT/VANILLA)
+# Setting: consolecolor.fatal-time Default: b   # consolecolor.fatal-time
+# Setting: forge.disablechunkforcesystem Default: false   # Disable ForgeChunkForceSystem
+# Setting: mohist.lang Default: xx_XX   # Mohist internationalization language setting, will return the default system language when your settings are invalid
+# Setting: consolecolor.warn-msg Default: e   # consolecolor.warn-msg
+# Setting: forge.modsblacklist.kickmessage Default: Use of unauthorized mods   # mods black-list kick Message
+# Setting: keep-spawn-loaded Default: true   # Keep spawn chunk loaded
+# Setting: settings.min-chunk-load-threads Default: 2   # Keep people from doing stupid things with max of 6
+# Setting: consolecolor.warn-level Default: e   # consolecolor.warn-level
+# Setting: consolecolor.info-msg Default: f   # consolecolor.info-msg
+# Setting: messages.Rejections-Hack Default: Hack rejections %s   # Hack rejections
+# Setting: consolecolor.error-level Default: c   # consolecolor.error-level
+# Setting: messages.Outdate-Server Default: Outdated server! I'm still on {0}   # Outdate Server
+# Setting: mohist.console_name Default: Server   # Front of the console, for example /say
+# Setting: messages.Requirements-Mod-Version-range Default: version range %s   # version range X
+# Setting: fake-players.do-login Default: false   # Raise login events for fake players
+# Setting: mohist.check_update_auto_download Default: false   # Check new version will download automatically
+# Setting: mohist.realtimeticking Default: false   # RealTimeTicking from sponge
+# Setting: consolecolor.error-msg Default: c   # consolecolor.error-msg
+# Setting: messages.Requirements-Mod-Not-found Default: Requires %s but mod is not found on client.   # Requires mod version X but mod is not found on client
+# Setting: consolecolor.trace-msg Default: c   # consolecolor.trace-msg
+
+plugin:
+  promptBug: false
+consolecolor:
+  info-level: '2'
+  warn-time: b
+  fatal-msg: c
+  info-time: b
+  trace-level: c
+  error-time: b
+  trace-time: b
+  fatal-level: c
+  fatal-time: b
+  warn-msg: '3'
+  warn-level: '2'
+  info-msg: r
+  error-level: c
+  error-msg: c
+  trace-msg: c
+entity-tick-limit: 300
+mohist:
+  CloseChatInConsole: false
+  check_libraries: true
+  check_update: true
+  support_nocmd: false
+  server-type: FML
+  lang: xx_XX
+  console_name: Server
+  check_update_auto_download: false
+  realtimeticking: false
+hidejoinmodslist: false
+messages:
+  Requirements-Mod-Version: version %s
+  Requirements-Mod-Invalid-version: Requires %s but client has %s.
+  Outdate-Client: Outdated client! Please use {0}
+  Rejections-Server-Mods: "Server Mod rejections: \n%s"
+  use-unknow-command: Unknown command. Type "/help" for help.
+  Rejections-Hack: Hack rejections %s
+  Outdate-Server: Outdated server! I'm still on {0}
+  Requirements-Mod-Version-range: version range %s
+  Requirements-Mod-Not-found: Requires %s but mod is not found on client.
+disable-announce-Advancements: false
+eventCanceled:
+  explosion: false
+forge:
+  modsblacklist:
+    list: '[]'
+    kickmessage: Use of unauthorized mods
+  disablechunkforcesystem: false
+  autounloadWorld_whitelist:
+  - '0'
+  - '1'
+  - '-1'
+libraries_black_list: aaaaa;bbbbbb
+world:
+  stopserversaveworlds: false
+keep-spawn-loaded: true
+settings:
+  min-chunk-load-threads: 2
+fake-players:
+  do-login: false
+config-version: 2
+CloseChatInConsole: false

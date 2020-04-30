@@ -1,0 +1,212 @@
+# ==================================================================================================
+# 
+# Place Holders (Tax Collection Messages Only):
+# ----------------------------------------------------
+# {PRE_TAX_BALANCE} - The balance before taxes were collected.
+# {POST_TAX_BALANCE} - The balance after taxes were collected.
+# {TAX_AMOUNT_TAXED} - The amount collected for a tax.
+# 
+# 
+# Player Place Holders:
+# ---------------------
+# {PLAYER_REAL_NAME} - The player's real name.
+# {PLAYER_DISPLAY_NAME} - The player's nickname if they have one. Otherwise real name is used.
+# {PLAYER_BALANCE} - The player's current balance.
+# 
+# 
+# Tax Place Holders:
+# ------------------
+# {TAX_NAME} - Name of the tax in the config.yml file.
+# {TAX_ENABLED} - Evaluates to Yes if tax is enabled, No otherwise.
+# {TAX_FREQUENCY} - How often tax is collected. Example: 1 day
+# {TAX_DEPOSIT_ENABLED} - Evaluates to Yes if Tax Deposit Account is enabled, No otherwise.
+# {TAX_DEPOSIT_ACCOUNT} - Name of the Tax Deposit Account where taxes are deposited.
+# {TAX_COLLECTION_NAME} - Name of the tax collection.
+# {TAX_NEXT_COLLECTION_TIME} - Date and Time the tax will be collected again.
+# {TAX_NAME_LIST} - Comma seperated list of valid tax names. 
+# 
+# 
+# Tax Collections, Bracket Groups, and Brackets Place Holders:
+# ------------------------------------------------------------
+# {TAX_COLLECTION_NAME} - Name of the tax collection.
+# {TAX_BRACKET_GROUP_NAME} - Name of the tax bracket group.
+# {TAX_BRACKET_GROUP_GROUPS} - The list of groups for a tax bracket group.
+# {TAX_BRACKET_NAME} - Name of the tax bracket
+# {TAX_BRACKET_MIN} - Minimum balance for the tax bracket.
+# {TAX_BRACKET_MAX} - Maximum balance for the tax bracket.
+# {TAX_BRACKET_AMOUNT} - The amount of tax to collect. Either a $ or % amount.
+# {TAX_BRACKET_AMOUNT_TYPE} - The type of tax collected. Either PERCENT or FIXED.
+# 
+# NOTE: If a place holder is not replaced in a message, the chances are that that
+#       place holder is a valid place holder for that message.
+# 
+# Messages:
+# ---------
+# Messages can be multiline or single line. Messages support the place holders listed 
+#          above and color codes. Each message can be disabled by setting Enabled to fale.
+# 
+# Multiline example:
+#     Message:
+#         Enabled: true
+#         Contents:
+#         - 'Line 1'
+#         - 'Line 2'
+#         - 'Line 3'
+# 
+# Singleline example:
+#     Message:
+#         Enabled: true
+#         Contents:
+#         - 'Entire Message'
+# 
+# 
+# Some messages are complicated and need to be broken up into multiple sub-messages. Any
+# message sub-message that starts with the word 'Each' means that it can be used multiple
+# times in the message like in a list. These sub-messages can be single or multiple lines.
+# Sub-messages can be disabled by setting them to []. To disable the entire message, it is
+# best to set Enabled to false.
+# 
+# Example:
+#     Message:
+#         Enabled: true
+#         Contents:
+#             Header:
+#             - 'Line 1'
+#             EachLine:
+#             - 'Line 1'
+#             - 'Line 2'
+#             - 'Line 3'
+#             Footer:
+#             - 'Line 1'
+# 
+# Disable sub-message example (disable footer sub-message):
+#     Message:
+#         Enabled: true
+#         Contents:
+#             Header:
+#             - 'Line 1'
+#             EachLine:
+#             - 'Line 1'
+#             - 'Line 2'
+#             - 'Line 3'
+#             Footer: []
+# 
+# Defined Messages:
+# ----------------- 
+# PlayerTaxCollected - Message that is displayed to the player when a tax is collected.
+#                      This same message is used for all taxes.
+# 
+# BroadcastTaxCollectionStart - Broadcast message that is displayed to all players when a tax
+#                               collection is about to start.
+# 
+# BroadcastTaxCollectionComplete - Broadcast message that is displayed to all players when a 
+#                                  tax collection has completed.
+# 
+# PlayerTaxList - Message that is displayed when the /taxes-list command is executed.
+#     Header - Header/title for the message. It is only displayed once.
+#     EachTax - This message is displayed once for each tax that is applicable for the 
+#               command that was executed.
+#     Footer - This is the footer of the message. It is only displayed once.
+# 
+# 
+# PlayerTaxListAll - Message that is displayed when the /taxes-listall command is executed.
+#     Header - Header/title for the message. It is only displayed once.
+#     EachTax - This message is displayed once for each tax that is applicable for the 
+#               command that was executed.
+#     Footer - This is the footer of the message. It is only displayed once.
+# 
+# 
+# PlayerTaxInfo - Message for the /taxes-info <TaxName> command. Displays the details of the 
+#                 tax specified by <TaxName> for the player that executed the command in-game.
+#                 This message only displays the Tax Bracket info that is applicable to the
+#                 to the player at the moment the /taxes-info command was executed.
+# 
+# PlayerTaxInfoAll - Message for the /taxes-infoall <TaxName> command. Displays the complete
+#                    config details of the tax specified by <TaxName>.
+#                    This message displays all of the Tax Bracket Groups and all of the 
+#                    Tax Brackets that are configured for the specified tax.
+#     TaxInfo - Display the tax level info. This is only displayed once.
+#     EachTaxBracketGroup - This is the Tax Bracket Group info. It is displayed for 
+#                           each Tax Bracket Group in the specified tax.
+#     EachTaxBracket - This is the Tax Bracket info. It is displayed for each Tax Bracket
+#                      of each Tax Bracket Group. 
+#     Footer - This is the footer of the message. It is only displayed once.
+# 
+# PlayerInvalidTaxName - Displayed when the player runs a command that requires a tax name
+#                        and the tax name is not valid.
+# 
+# ==================================================================================================
+
+Messages:
+    PlayerTaxCollected:
+        Enabled: true
+        Contents:
+        - '&5{TAX_NAME} &6taxes were collected.'
+        - '&6Old Balance: &5${PRE_TAX_BALANCE}'
+        - '&6New Balance: &5${POST_TAX_BALANCE}'
+        - '&6Amount Taxed: &5${TAX_AMOUNT_TAXED}'
+        - '&6Taxed at: &5{TAX_BRACKET_AMOUNT} &6(&5{TAX_BRACKET_AMOUNT_TYPE}&6)'
+    PlayerTaxList:
+        Enabled: true
+        Contents:
+            Header:
+            - '&7&l&m---------------------------------------------'
+            - '&5{PLAYER_REAL_NAME}''s &6applicable taxes:'
+            - '&7&l&m---------------------------------------------'
+            EachTax:
+            - '&6Tax Name: &5{TAX_NAME}&6, Current Tax: &5{TAX_BRACKET_AMOUNT}'
+            Footer:
+            - '&7&l&m---------------------------------------------'
+    PlayerTaxListAll:
+        Enabled: true
+        Contents:
+            Header:
+            - '&7&l&m---------------------------------------------'
+            - '&6Complete list of taxes:'
+            - '&7&l&m---------------------------------------------'
+            EachTax:
+            - '&6Tax Name: &5{TAX_NAME}&6, Enabled: &5{TAX_ENABLED}'
+            Footer:
+            - '&7&l&m---------------------------------------------'
+    PlayerTaxInfo:
+        Enabled: true
+        Contents:
+        - '&6Current &5{PLAYER_REAL_NAME}''s &6tax info for &5{TAX_NAME}&6:'
+        - '&6Tax Frequency: &5{TAX_FREQUENCY}'
+        - '&6Next Tax Collection: &5{TAX_NEXT_COLLECTION_TIME}'
+        - '&6Tax Collection Name: &5{TAX_COLLECTION_NAME}'
+        - '&6    Tax Bracket Group Name: &5{TAX_BRACKET_GROUP_NAME}'
+        - '&6        Tax Bracket Name: &5{TAX_BRACKET_NAME}'
+        - '&6            Balance Range: &5${TAX_BRACKET_MIN} &6- &5${TAX_BRACKET_MAX}'
+        - '&6            Current Tax: &5{TAX_BRACKET_AMOUNT}'
+    PlayerTaxInfoAll:
+        Enabled: true
+        Contents:
+            TaxInfo:
+            - '&7&l&m---------------------------------------------'
+            - '&6All Tax info for &5{TAX_NAME}&6:'
+            - '&7&l&m---------------------------------------------'
+            - '&6Tax Frequency: &5{TAX_FREQUENCY}'
+            - '&6Next Tax Collection: &5{TAX_NEXT_COLLECTION_TIME}'
+            - '&6Tax Collection Name: &5{TAX_COLLECTION_NAME}'
+            EachTaxBracketGroup:
+            - '&6    Tax Bracket Group Name: &5{TAX_BRACKET_GROUP_NAME}'
+            - '&6    Tax Bracket Group Groups: &5{TAX_BRACKET_GROUP_GROUPS}'
+            EachTaxBracket:
+            - '&6        Tax Bracket Name: &5{TAX_BRACKET_NAME}'
+            - '&6            Balance Range: &5${TAX_BRACKET_MIN} &6- &5${TAX_BRACKET_MAX}'
+            - '&6            Current Tax: &5{TAX_BRACKET_AMOUNT}'
+            Footer:
+            - '&7&l&m---------------------------------------------'
+    BroadcastTaxCollectionStart:
+        Enabled: true
+        Contents:
+        - '&5{TAX_NAME} &6being collected.'
+    BroadcastTaxCollectionComplete:
+        Enabled: true
+        Contents:
+        - '&5{TAX_NAME} &6collection complete.'
+    PlayerInvalidTaxName:
+        Enabled: true
+        Contents:
+        - '&6That is not a valid tax name. Valid tax names are: &5{TAX_NAME_LIST}.'
