@@ -1,54 +1,6 @@
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 
-
-// Исполнение комманд при достижении нового уровня профессии
-
-// Добавить уровни GamesStages
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 2, "gamestage add @p farmer_2");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 3, "gamestage add @p farmer_3");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 4, "gamestage add @p farmer_4");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 5, "gamestage add @p farmer_5");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 6, "gamestage add @p farmer_6");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 7, "gamestage add @p farmer_7");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 8, "gamestage add @p farmer_8");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 9, "gamestage add @p farmer_9");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 10, "gamestage add @p farmer_10");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 11, "gamestage add @p farmer_11");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 12, "gamestage add @p farmer_12");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 13, "gamestage add @p farmer_13");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 14, "gamestage add @p farmer_14");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 15, "gamestage add @p farmer_15");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 16, "gamestage add @p farmer_16");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 17, "gamestage add @p farmer_17");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 18, "gamestage add @p farmer_18");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 19, "gamestage add @p farmer_19");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 20, "gamestage add @p farmer_20");
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 21, "gamestage add @p farmer_21");
-
-// Обнуление профессии
-mods.compatskills.SkillChange.addLevelUpCommands(<skill:compatskills:farmer>, 1, "gamestage remove @p farmer_21",
-"gamestage remove @p farmer_20",
-"gamestage remove @p farmer_19",
-"gamestage remove @p farmer_18",
-"gamestage remove @p farmer_17",
-"gamestage remove @p farmer_16",
-"gamestage remove @p farmer_15",
-"gamestage remove @p farmer_14",
-"gamestage remove @p farmer_13",
-"gamestage remove @p farmer_12",
-"gamestage remove @p farmer_11",
-"gamestage remove @p farmer_10",
-"gamestage remove @p farmer_9",
-"gamestage remove @p farmer_8",
-"gamestage remove @p farmer_7",
-"gamestage remove @p farmer_6",
-"gamestage remove @p farmer_5",
-"gamestage remove @p farmer_4",
-"gamestage remove @p farmer_3",
-"gamestage remove @p farmer_2");
-
-
 mods.compatskills.Requirement.addRequirement(<minecraft:wooden_hoe>, "compatskills:farmer|2");
 mods.compatskills.Requirement.addRequirement(<minecraft:stone_hoe>, "compatskills:farmer|2");
 mods.compatskills.Requirement.addRequirement(<minecraft:golden_hoe>, "compatskills:farmer|2");
